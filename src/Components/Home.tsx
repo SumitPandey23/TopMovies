@@ -70,7 +70,7 @@ const Home = () => {
         <div className="relative h-full">
           <div className="h-full w-full bg-gray-200">
             <img
-              src={`http://localhost:3000/${imageSrc}`}
+              src={`https://top-movies-backend.vercel.app/${imageSrc}`}
               alt={name}
               className="w-full object-cover max-h-[500px]"
             />
