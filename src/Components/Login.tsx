@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -8,6 +8,7 @@ export type UserLogin = {
     password:string
 };
 const Page = () => {
+  const navigate = useNavigate();
 
   const [userData, setUserData] = useState<UserLogin>({
     email: '',
@@ -20,7 +21,8 @@ const Page = () => {
       const response = await axios.post('https://top-movies-backend.vercel.app/users/login', userData);
       if(response.status === 200){
         localStorage.setItem('token', response.data.token);
-        toast.success('Log-in Successfull')
+        toast.success('Log-in Successfull');
+        navigate("/")
         window.location.reload();
       }
       else{
