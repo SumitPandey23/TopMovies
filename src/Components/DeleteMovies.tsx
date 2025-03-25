@@ -23,7 +23,7 @@ const DeleteMovie: React.FC = () => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:3000/movies/getmovie"
+          "https://top-movies-backend.vercel.app/movies/getmovie"
         );
         const data: Movie[] = response.data.movies;
         setMovies(data);
@@ -48,7 +48,7 @@ const DeleteMovie: React.FC = () => {
     setIsDeleting(true);
     try {
       const response = await axios.delete(
-        `http://127.0.0.1:3000/movies/deletemovie/${deleteMovie.name}`
+        `https://top-movies-backend.vercel.app/movies/deletemovie/${deleteMovie.name}`
       );
 
       if (response.status === 200) {

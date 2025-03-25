@@ -22,7 +22,7 @@ const EditMovie: React.FC = () => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:3000/movies/getmovie"
+          "https://top-movies-backend.vercel.app/movies/getmovie"
         );
         const data: Movie[] = response.data.movies;
         setMovies(data);
@@ -55,7 +55,7 @@ const EditMovie: React.FC = () => {
 
     try {
       const response = await axios.put(
-        `http://127.0.0.1:3000/movies/updatemovie/${editedMovie.name}`,
+        `https://top-movies-backend.vercel.app/movies/updatemovie/${editedMovie.name}`,
         {
           director: editedMovie.director,
           rating: editedMovie.rating,

@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:3000/movies/getmovie");
+        const response = await fetch("https://top-movies-backend.vercel.app/movies/getmovie");
         if (!response.ok) {
           throw new Error("Failed to fetch movies");
         }

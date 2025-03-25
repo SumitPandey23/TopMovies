@@ -20,7 +20,7 @@ const SignUp = () => {
     const handleUserSignUp = async (e:React.FormEvent)=>{
         e.preventDefault();
         try {
-          await axios.post('http://localhost:3000/users/signup',userData);
+          await axios.post('https://top-movies-backend.vercel.app/users/signup',userData);
           navigate('/login');
         } catch (error) {
             console.log('Error signing up', error);

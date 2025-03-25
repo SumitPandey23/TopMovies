@@ -77,7 +77,7 @@ const AddMovie = () => {
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:3000/movies/addmovie',
+        'https://top-movies-backend.vercel.app/movies/addmovie',
         formData
       );
 
